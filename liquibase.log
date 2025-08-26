@@ -1,31 +1,74 @@
-ago. 25, 2025 9:08:19 PM liquibase.command
-INFORMA합ES: Logging exception.
-ERROR: Exception Details
-ERROR: Exception Primary Class:  ChangeLogParseException
-ERROR: Exception Primary Reason:  /db/changelog/db.changelog-master.yml does not exist
-ERROR: Exception Primary Source:  4.29.1
-ago. 25, 2025 9:08:19 PM liquibase.command
+ago. 25, 2025 10:01:00 PM liquibase.changelog
+INFORMA합ES: Reading resource: db/changelog/migrations/db.changelog-20250825.sql
+ago. 25, 2025 10:01:00 PM liquibase.changelog
+INFORMA합ES: Reading resource: db/changelog/migrations/db.changelog-20250825_2.sql
+ago. 25, 2025 10:01:00 PM liquibase.changelog
+INFORMA합ES: Reading resource: db/changelog/migrations/db.changelog-20250825_3.sql
+ago. 25, 2025 10:01:00 PM liquibase.changelog
+INFORMA합ES: Reading resource: db/changelog/migrations/db.changelog-20250825_4.sql
+ago. 25, 2025 10:01:00 PM liquibase.changelog
+INFORMA합ES: Reading resource: db/changelog/migrations/db.changelog-20250825_5.sql
+ago. 25, 2025 10:01:00 PM liquibase.changelog
+INFORMA합ES: Creating database history table with name: board.databasechangelog
+ago. 25, 2025 10:01:00 PM liquibase.changelog
+INFORMA합ES: Reading from board.databasechangelog
+ago. 25, 2025 10:01:00 PM liquibase.lockservice
+INFORMA합ES: Successfully acquired change log lock
+ago. 25, 2025 10:01:00 PM liquibase.command
+INFORMA합ES: Using deploymentId: 6170060991
+ago. 25, 2025 10:01:00 PM liquibase.changelog
+INFORMA합ES: Reading from board.databasechangelog
+Running Changeset: db/changelog/migrations/db.changelog-20250825.sql::20250825::lima
+ago. 25, 2025 10:01:01 PM liquibase.changelog
+INFORMA합ES: Custom SQL executed
+ago. 25, 2025 10:01:01 PM liquibase.changelog
+INFORMA합ES: ChangeSet db/changelog/migrations/db.changelog-20250825.sql::20250825::lima ran successfully in 66ms
+Running Changeset: db/changelog/migrations/db.changelog-20250825_2.sql::2::lima
+ago. 25, 2025 10:01:01 PM liquibase.changelog
+INFORMA합ES: Custom SQL executed
+ago. 25, 2025 10:01:01 PM liquibase.changelog
+INFORMA합ES: ChangeSet db/changelog/migrations/db.changelog-20250825_2.sql::2::lima ran successfully in 65ms
+Running Changeset: db/changelog/migrations/db.changelog-20250825_3.sql::3::lima
+ago. 25, 2025 10:01:01 PM liquibase.changelog
+INFORMA합ES: Custom SQL executed
+ago. 25, 2025 10:01:01 PM liquibase.changelog
+INFORMA합ES: ChangeSet db/changelog/migrations/db.changelog-20250825_3.sql::3::lima ran successfully in 80ms
+Running Changeset: db/changelog/migrations/db.changelog-20250825_4.sql::4::lima
+ago. 25, 2025 10:01:01 PM liquibase.changelog
+INFORMA합ES: Custom SQL executed
+ago. 25, 2025 10:01:01 PM liquibase.changelog
+INFORMA합ES: ChangeSet db/changelog/migrations/db.changelog-20250825_4.sql::4::lima ran successfully in 66ms
+Running Changeset: db/changelog/migrations/db.changelog-20250825_5.sql::5::lima
+ago. 25, 2025 10:01:01 PM liquibase.changelog
+INFORMA합ES: Custom SQL executed
+ago. 25, 2025 10:01:01 PM liquibase.changelog
+INFORMA합ES: ChangeSet db/changelog/migrations/db.changelog-20250825_5.sql::5::lima ran successfully in 131ms
+
+UPDATE SUMMARY
+Run:                          5
+Previously run:               0
+Filtered out:                 0
+-------------------------------
+Total change sets:            5
+
+ago. 25, 2025 10:01:01 PM liquibase.util
+INFORMA합ES: UPDATE SUMMARY
+ago. 25, 2025 10:01:01 PM liquibase.util
+INFORMA합ES: Run:                          5
+ago. 25, 2025 10:01:01 PM liquibase.util
+INFORMA합ES: Previously run:               0
+ago. 25, 2025 10:01:01 PM liquibase.util
+INFORMA합ES: Filtered out:                 0
+ago. 25, 2025 10:01:01 PM liquibase.util
+INFORMA합ES: -------------------------------
+ago. 25, 2025 10:01:01 PM liquibase.util
+INFORMA합ES: Total change sets:            5
+ago. 25, 2025 10:01:01 PM liquibase.util
+INFORMA합ES: Update summary generated
+ago. 25, 2025 10:01:01 PM liquibase.command
+INFORMA합ES: Update command completed successfully.
+Liquibase: Update has been successful. Rows affected: 5
+ago. 25, 2025 10:01:01 PM liquibase.lockservice
+INFORMA합ES: Successfully released change log lock
+ago. 25, 2025 10:01:01 PM liquibase.command
 INFORMA합ES: Command execution complete
-liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: /db/changelog/db.changelog-master.yml does not exist
-	at liquibase.command.CommandScope.execute(CommandScope.java:258)
-	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216)
-	at liquibase.Scope.lambda$child$0(Scope.java:191)
-	at liquibase.Scope.child(Scope.java:200)
-	at liquibase.Scope.child(Scope.java:190)
-	at liquibase.Scope.child(Scope.java:169)
-	at liquibase.Liquibase.runInScope(Liquibase.java:1290)
-	at liquibase.Liquibase.update(Liquibase.java:205)
-	at liquibase.Liquibase.update(Liquibase.java:188)
-	at liquibase.Liquibase.update(Liquibase.java:175)
-	at liquibase.Liquibase.update(Liquibase.java:155)
-	at org.example.persistence.migration.MigrationStrategy.executeMigration(MigrationStrategy.java:37)
-	at org.example.Main.main(Main.java:15)
-Caused by: liquibase.exception.ChangeLogParseException: /db/changelog/db.changelog-master.yml does not exist
-	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:37)
-	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.lambda$getDatabaseChangeLog$0(DatabaseChangelogCommandStep.java:129)
-	at liquibase.Scope.child(Scope.java:200)
-	at liquibase.Scope.child(Scope.java:176)
-	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.getDatabaseChangeLog(DatabaseChangelogCommandStep.java:128)
-	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:87)
-	at liquibase.command.CommandScope.execute(CommandScope.java:220)
-	... 12 more
